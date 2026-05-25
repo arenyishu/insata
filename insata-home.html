@@ -1,0 +1,914 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>INSATA — Premium Service Apartments in Siliguri &amp; Kolkata</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,400&family=Karla:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet"/>
+
+  <!-- ═══════════════════════════════════════════════
+       ASSET URLS — replace with your hosted images
+       (Figma URLs expire in 7 days)
+  ═══════════════════════════════════════════════ -->
+  <script>
+    const A = {
+      logo:      "https://www.figma.com/api/mcp/asset/fa62a7a5-b65f-4f94-8dab-4e29f2096c57",
+      heroBg:    "https://www.figma.com/api/mcp/asset/d2c36020-0a4b-4886-987a-132ba3255f64",
+      bedroom:   "https://www.figma.com/api/mcp/asset/64a0ff40-8d75-4037-84b4-14ff3373f721",
+      kitchen:   "https://www.figma.com/api/mcp/asset/d4902ae4-a561-4e6d-bd80-3af93596a3b6",
+      workspace: "https://www.figma.com/api/mcp/asset/5ed861fa-0c54-4361-b7b2-a614d4af4c0f",
+      siliguri:  "https://www.figma.com/api/mcp/asset/c4e04761-473f-495f-897f-8ead98dc0405",
+      kolkata:   "https://www.figma.com/api/mcp/asset/728f321f-4d1e-4308-abbd-cd1d79c42a79",
+      homeIcon:  "https://www.figma.com/api/mcp/asset/5cbb6514-55ec-466d-b21b-9dbf7c3ccff5",
+      heartIcon: "https://www.figma.com/api/mcp/asset/c2bf8027-89c0-4ae5-a1f3-5ffcc4a31eb1",
+      buildIcon: "https://www.figma.com/api/mcp/asset/9cd6f53c-056e-480d-a8ec-b8f6a9956b00",
+      inrIcon:   "https://www.figma.com/api/mcp/asset/0ab8518e-884b-4e7c-9acb-8d6d10080cb6",
+      icoKit:    "https://www.figma.com/api/mcp/asset/b3e6c818-1ca9-464e-a9c0-9ff05c86bded",
+      icoWifi:   "https://www.figma.com/api/mcp/asset/b6363e7b-367b-4750-8a9e-ce1b5a9700cd",
+      icoClean:  "https://www.figma.com/api/mcp/asset/37c6ff95-3347-43dd-8554-8f1dad46737f",
+      icoSec:    "https://www.figma.com/api/mcp/asset/5c125cd6-e048-491c-83b3-8220950164b4",
+      star:      "https://www.figma.com/api/mcp/asset/8ccabc53-1f15-4784-a36b-c74ae5469633",
+      arwGold:   "https://www.figma.com/api/mcp/asset/0b0875af-a992-4ad9-8daa-005bbfd403ec",
+      arwDark:   "https://www.figma.com/api/mcp/asset/552deb9b-5155-471e-a8eb-40b5a24e1c36",
+      phone:     "https://www.figma.com/api/mcp/asset/6f117da8-24e4-498f-8b2b-89c6bea869a6",
+      email:     "https://www.figma.com/api/mcp/asset/9cd81de3-1013-429e-9180-330c1e1d839b",
+      mappin:    "https://www.figma.com/api/mcp/asset/262e8b7b-0469-4b7e-b278-6cfd9a099a21",
+      chevron:   "https://www.figma.com/api/mcp/asset/df601d2f-0b34-4b7f-bf57-ce06414d2787",
+    };
+    /* inject all img[data-key] src values after DOM loads */
+    document.addEventListener('DOMContentLoaded', () => {
+      document.querySelectorAll('img[data-key]').forEach(img => {
+        img.src = A[img.dataset.key] || '';
+      });
+    });
+  </script>
+
+  <style>
+    /* ── RESET ─────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Karla', sans-serif;
+      background: #f9f8f6;
+      color: #0d0d0d;
+      -webkit-font-smoothing: antialiased;
+      line-height: 1.6;
+    }
+    a { text-decoration: none; color: inherit; cursor: pointer; }
+    img { display: block; max-width: 100%; }
+    button { font-family: inherit; cursor: pointer; }
+
+    /* ── DESIGN TOKENS ──────────────────────────────── */
+    :root {
+      --dark:          #0d0d0d;
+      --dark-card:     #181818;
+      --light:         #f9f8f6;
+      --gold:          #c7a44d;
+      --gold-lt:       #e4ce95;
+      --gold-grad:     linear-gradient(145deg, #c7a44d 0%, #e4ce95 100%);
+      --gold-grad-h:   linear-gradient(93deg,  #c7a44d 0%, #e4ce95 100%);
+      --text-lt:       #f9f8f6;
+      --t60:           rgba(249,248,246,0.60);
+      --t70:           rgba(249,248,246,0.70);
+      --t50:           rgba(249,248,246,0.50);
+      --t40:           rgba(249,248,246,0.40);
+      --t80:           rgba(249,248,246,0.80);
+      --b10:           rgba(199,164,77,0.10);
+      --b20:           rgba(199,164,77,0.20);
+      --b40:           rgba(199,164,77,0.40);
+      --font-d:        'Cormorant Garamond', serif;
+      --font-b:        'Karla', sans-serif;
+      --r:             6px;
+      --r-lg:          8px;
+      --max-w:         1280px;
+    }
+
+    /* ── UTILITIES ──────────────────────────────────── */
+    .wrap     { max-width: var(--max-w); margin: 0 auto; padding: 0 40px; }
+    .wrap-xl  { max-width: 1600px; margin: 0 auto; padding: 0 88px; }
+    .gold-txt { background: var(--gold-grad); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .label    {
+      font-family: var(--font-b); font-size: 14px; font-weight: 400;
+      letter-spacing: 4.2px; text-transform: uppercase; color: var(--gold);
+      display: block;
+    }
+    .stars    { display: flex; gap: 4px; }
+    .stars img{ width: 16px; height: 16px; object-fit: contain; }
+
+    /* ── BUTTONS ────────────────────────────────────── */
+    .btn-gold {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--gold); color: var(--dark);
+      font-family: var(--font-b); font-weight: 600; font-size: 16px;
+      letter-spacing: 0.4px; padding: 10px 32px;
+      border-radius: var(--r); border: none;
+      transition: background .2s;
+    }
+    .btn-gold:hover { background: var(--gold-lt); }
+    .btn-gold.sm { font-size: 14px; padding: 9px 20px; letter-spacing: .35px; }
+
+    .btn-outline {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: transparent; color: var(--gold);
+      font-family: var(--font-b); font-weight: 600; font-size: 14px;
+      letter-spacing: .35px; padding: 11px 28px;
+      border-radius: var(--r); border: 2px solid var(--gold);
+      transition: background .2s;
+    }
+    .btn-outline:hover { background: rgba(199,164,77,.12); }
+    .btn-outline img { width:16px; height:16px; object-fit:contain; }
+
+    .btn-dark {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--dark); color: var(--text-lt);
+      font-family: var(--font-b); font-weight: 600; font-size: 14px;
+      letter-spacing: .35px; padding: 13px 28px;
+      border-radius: var(--r); border: none;
+      transition: background .2s;
+    }
+    .btn-dark:hover { background: #1a1a1a; }
+    .btn-dark img { width:16px; height:16px; object-fit:contain; filter: brightness(0) invert(1); }
+
+    /* ── SECTION HEADER PATTERN ─────────────────────── */
+    .sh { text-align: center; margin-bottom: 56px; }
+    .sh .label { margin-bottom: 16px; }
+    .sh-sub {
+      font-family: var(--font-b); font-size: 18px;
+      color: #666; line-height: 1.625;
+      max-width: 740px; margin: 20px auto 0;
+    }
+    .sh-sub.lt { color: var(--t70); }
+
+    /* ── TYPOGRAPHY ─────────────────────────────────── */
+    .h1 {
+      font-family: var(--font-d); font-size: 72px; font-weight: 700;
+      font-style: normal; line-height: 1; color: var(--text-lt);
+    }
+    .h2 {
+      font-family: var(--font-d); font-size: 48px; font-weight: 700;
+      font-style: normal; line-height: 1; color: var(--text-lt);
+    }
+    .h2.dk { color: var(--dark); }
+    .h3-lg {
+      font-family: var(--font-d); font-size: 36px; font-weight: 700;
+      font-style: normal; line-height: 1.2; color: #fff;
+    }
+    .h3-md {
+      font-family: var(--font-d); font-size: 20px; font-weight: 600;
+      font-style: normal; line-height: 1.4; color: var(--text-lt);
+    }
+    .h3-sm {
+      font-family: var(--font-d); font-size: 30px; font-weight: 700;
+      font-style: normal; line-height: 1.2; color: var(--text-lt);
+    }
+
+    /* ═══════════════════════════════════════════════════
+       NAVBAR
+    ═══════════════════════════════════════════════════ */
+    #nav {
+      position: fixed; inset: 0 0 auto;
+      z-index: 999; height: 81px;
+      background: rgba(13,13,13,.95);
+      border-bottom: 1px solid var(--b20);
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+      transition: background .3s;
+    }
+    #nav.scrolled { background: rgba(13,13,13,.99); }
+
+    .nav-inner {
+      height: 100%; display: flex;
+      align-items: center; justify-content: space-between;
+    }
+    .nav-logo img { height: 61px; width: 66px; object-fit: cover; border-radius: 4px; }
+
+    .nav-links {
+      display: flex; align-items: center;
+      gap: 26px; list-style: none;
+    }
+    .nav-links a,
+    .nav-drop {
+      font-family: var(--font-b); font-size: 14px; font-weight: 400;
+      letter-spacing: .35px; color: var(--t80);
+      background: none; border: none;
+      display: flex; align-items: center; gap: 4px;
+      transition: color .2s;
+    }
+    .nav-links a:hover, .nav-drop:hover { color: var(--gold); }
+    .nav-links a.active { color: var(--gold); }
+    .nav-drop img { width: 12px; height: 12px; object-fit: contain; opacity: .6; }
+
+    /* ═══════════════════════════════════════════════════
+       HERO
+    ═══════════════════════════════════════════════════ */
+    #hero {
+      position: relative; min-height: 1080px;
+      padding-top: 81px;
+      display: flex; align-items: center; overflow: hidden;
+    }
+    .hero-bg {
+      position: absolute; inset: 0; z-index: 0;
+    }
+    .hero-bg img { width: 100%; height: 100%; object-fit: cover; }
+    .hero-ov {
+      position: absolute; inset: 0;
+      background: rgba(13,13,13,.70);
+    }
+    .hero-body-wrap {
+      position: relative; z-index: 1;
+      max-width: 720px;
+    }
+    .hero-body-wrap .label { margin-bottom: 20px; }
+
+    .hero-body-wrap .h1 { margin-bottom: 28px; }
+    .hero-p {
+      font-family: var(--font-b); font-size: 20px;
+      color: var(--t70); line-height: 1.6;
+      max-width: 560px; margin-bottom: 40px;
+    }
+    .hero-ctas { display: flex; align-items: center; gap: 16px; }
+
+    /* ═══════════════════════════════════════════════════
+       STATS
+    ═══════════════════════════════════════════════════ */
+    #stats {
+      background: var(--dark); height: 160px;
+      display: flex; align-items: center;
+    }
+    .stats-grid {
+      width: 100%; display: grid;
+      grid-template-columns: repeat(4,1fr);
+      text-align: center;
+      border-left: 1px solid rgba(199,164,77,.15);
+    }
+    .stat {
+      padding: 16px 0;
+      border-right: 1px solid rgba(199,164,77,.15);
+    }
+    .stat-n {
+      font-family: var(--font-d); font-size: 36px; font-weight: 700;
+      font-style: normal; line-height: 1.1;
+      background: var(--gold-grad-h);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      background-clip: text; display: block; margin-bottom: 4px;
+    }
+    .stat-l {
+      font-family: var(--font-b); font-size: 14px; color: var(--t60);
+    }
+
+    /* ═══════════════════════════════════════════════════
+       INSATA ADVANTAGE
+    ═══════════════════════════════════════════════════ */
+    #advantage { background: var(--dark); padding: 96px 0; }
+
+    .adv-grid {
+      display: grid; grid-template-columns: repeat(2,1fr);
+      gap: 24px;
+    }
+    .adv-card {
+      background: var(--dark-card);
+      border: 1px solid var(--gold);
+      border-radius: var(--r-lg);
+      padding: 40px;
+      transition: border-color .2s;
+    }
+    .adv-card:hover { border-color: rgba(199,164,77,.65); }
+    .adv-card img.ico { width: 77px; height: 77px; object-fit: contain; margin-bottom: 22px; }
+    .adv-card .h3-lg { margin-bottom: 14px; }
+    .adv-card p {
+      font-family: var(--font-b); font-size: 20px;
+      color: #666; line-height: 1.55;
+    }
+
+    /* ═══════════════════════════════════════════════════
+       EXPERIENCE (photo grid)
+    ═══════════════════════════════════════════════════ */
+    #experience { background: var(--light); padding: 96px 0; }
+    #experience .sh .h2 { color: var(--dark); }
+
+    .photo-grid {
+      display: grid;
+      grid-template-columns: 848fr 416fr;
+      gap: 16px;
+    }
+    .pc {
+      position: relative; border-radius: var(--r-lg);
+      overflow: hidden;
+    }
+    .pc img.pimg { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .pc-ov {
+      position: absolute; inset: 0;
+      background: rgba(13,13,13,.40);
+    }
+    .pc-label {
+      position: absolute; bottom: 0; left: 0; right: 0;
+      padding: 0 24px 56px;
+    }
+    .pc-label .label { font-size: 12px; letter-spacing: 2.4px; margin-bottom: 4px; }
+    .pc-label .pc-title {
+      font-family: var(--font-d); font-weight: 600; font-style: normal;
+      color: var(--text-lt);
+    }
+    .pc.large      { height: 640px; }
+    .pc.large .pc-label .pc-title { font-size: 24px; line-height: 32px; }
+    .pc-stack      { display: flex; flex-direction: column; gap: 16px; }
+    .pc.small      { height: 312px; }
+    .pc.small .pc-label { padding: 0 16px 40px; }
+    .pc.small .pc-label .pc-title { font-size: 20px; line-height: 28px; }
+
+    /* ═══════════════════════════════════════════════════
+       WHY INSATA
+    ═══════════════════════════════════════════════════ */
+    #why { background: var(--dark); padding: 96px 0; }
+
+    .why-grid {
+      display: grid; grid-template-columns: repeat(4,1fr);
+      gap: 24px;
+    }
+    .why-card {
+      border: 1px solid var(--b10);
+      border-radius: var(--r-lg);
+      padding: 32px; text-align: center;
+      transition: border-color .25s;
+    }
+    .why-card:hover { border-color: var(--b40); }
+    .why-card img { width: 32px; height: 32px; object-fit: contain; margin: 0 auto 20px; display: block; }
+    .why-card .h3-md { margin-bottom: 12px; }
+    .why-card p { font-family: var(--font-b); font-size: 14px; color: var(--t60); line-height: 1.625; }
+
+    /* ═══════════════════════════════════════════════════
+       LOCATIONS
+    ═══════════════════════════════════════════════════ */
+    #locations { background: var(--light); padding: 96px 0; }
+    #locations .sh .h2 { color: var(--dark); }
+
+    .loc-grid {
+      display: grid; grid-template-columns: repeat(2,1fr);
+      gap: 24px;
+    }
+    .loc-card {
+      position: relative; border-radius: var(--r-lg);
+      overflow: hidden; height: 400px; cursor: pointer;
+    }
+    .loc-card img {
+      width: 100%; height: 100%; object-fit: cover;
+      transition: transform .7s ease;
+    }
+    .loc-card:hover img { transform: scale(1.05); }
+    .loc-grad {
+      position: absolute; inset: 0;
+      background: linear-gradient(to top, rgba(13,13,13,.85) 0%, rgba(13,13,13,.30) 50%, transparent 100%);
+    }
+    .loc-body {
+      position: absolute; bottom: 32px;
+      left: 32px; right: 32px;
+    }
+    .loc-tag {
+      display: flex; align-items: center; gap: 8px;
+      margin-bottom: 6px;
+    }
+    .loc-tag img { width: 16px; height: 16px; object-fit: contain; }
+    .loc-tag span {
+      font-family: var(--font-b); font-size: 14px;
+      color: var(--gold); letter-spacing: .35px;
+    }
+    .loc-body .h3-sm { margin-bottom: 8px; }
+    .loc-desc {
+      font-family: var(--font-b); font-size: 14px;
+      color: var(--t70); margin-bottom: 20px;
+    }
+
+    /* ═══════════════════════════════════════════════════
+       TESTIMONIALS
+    ═══════════════════════════════════════════════════ */
+    #testimonials { background: var(--dark); padding: 96px 0; }
+    #testimonials .sh .h2 { line-height: 1.1; }
+
+    .testi-grid {
+      display: grid; grid-template-columns: repeat(3,1fr);
+      gap: 24px;
+    }
+    .testi-card {
+      border: 1px solid var(--b10);
+      border-radius: var(--r-lg);
+      padding: 32px;
+      transition: border-color .25s;
+    }
+    .testi-card:hover { border-color: rgba(199,164,77,.35); }
+    .testi-card .stars { margin-bottom: 20px; }
+    .testi-q {
+      font-family: var(--font-b); font-size: 14px;
+      font-style: italic; color: var(--t70);
+      line-height: 22.75px; margin-bottom: 28px;
+    }
+    .testi-name {
+      font-family: var(--font-b); font-size: 14px;
+      font-weight: 600; color: var(--text-lt);
+      margin-bottom: 4px;
+    }
+    .testi-role {
+      font-family: var(--font-b); font-size: 12px;
+      color: var(--t50);
+    }
+
+    /* ═══════════════════════════════════════════════════
+       PROPERTY OWNERS
+    ═══════════════════════════════════════════════════ */
+    #owners {
+      background: var(--light); padding: 96px 0;
+      text-align: center;
+    }
+    #owners .sh { margin-bottom: 20px; }
+    #owners .h2 { color: var(--dark); }
+    .owners-p {
+      font-family: var(--font-b); font-size: 18px;
+      color: #666; line-height: 1.625;
+      max-width: 645px; margin: 0 auto 40px;
+    }
+
+    /* ═══════════════════════════════════════════════════
+       FINAL CTA
+    ═══════════════════════════════════════════════════ */
+    #cta {
+      background: var(--dark); padding: 120px 0;
+      text-align: center;
+    }
+    #cta .h2 { margin-bottom: 20px; }
+    #cta .cta-sub {
+      font-family: var(--font-b); font-size: 18px;
+      color: var(--t70); line-height: 1.6;
+      max-width: 560px; margin: 0 auto 40px;
+    }
+    #cta .cta-btns {
+      display: flex; align-items: center;
+      justify-content: center; gap: 16px;
+    }
+
+    /* ═══════════════════════════════════════════════════
+       FOOTER
+    ═══════════════════════════════════════════════════ */
+    footer {
+      background: var(--dark);
+      border-top: 1px solid var(--b20);
+      padding: 80px 0 0;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr 1fr 1fr;
+      gap: 56px; padding-bottom: 64px;
+    }
+    .ft-brand-name {
+      font-family: var(--font-d); font-size: 24px; font-weight: 700;
+      letter-spacing: 3.6px; font-style: normal;
+      background: var(--gold-grad);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      background-clip: text; display: block; margin-bottom: 16px;
+    }
+    .ft-brand p {
+      font-family: var(--font-b); font-size: 14px;
+      color: var(--t60); line-height: 22.75px;
+    }
+    .ft-col h4 {
+      font-family: var(--font-d); font-size: 18px; font-weight: 600;
+      font-style: normal; color: var(--gold); margin-bottom: 20px;
+    }
+    .ft-links { list-style: none; display: flex; flex-direction: column; gap: 12px; }
+    .ft-links a {
+      font-family: var(--font-b); font-size: 14px;
+      color: var(--t60); transition: color .2s;
+    }
+    .ft-links a:hover { color: var(--gold); }
+    .ft-contacts { display: flex; flex-direction: column; gap: 12px; }
+    .ft-ci { display: flex; align-items: center; gap: 8px; }
+    .ft-ci img { width: 16px; height: 16px; object-fit: contain; flex-shrink: 0; }
+    .ft-ci span { font-family: var(--font-b); font-size: 14px; color: var(--t60); }
+    .ft-socials { display: flex; flex-wrap: wrap; gap: 12px 20px; }
+    .ft-socials a {
+      font-family: var(--font-b); font-size: 14px;
+      color: var(--t60); transition: color .2s;
+    }
+    .ft-socials a:hover { color: var(--gold); }
+    .ft-bottom {
+      border-top: 1px solid var(--b10);
+      padding: 32px 0; text-align: center;
+    }
+    .ft-bottom p {
+      font-family: var(--font-b); font-size: 12px;
+      color: var(--t40);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ═══════════════════════════════════════ NAVBAR ══ -->
+  <nav id="nav">
+    <div class="wrap-xl nav-inner">
+      <div class="nav-logo">
+        <img data-key="logo" alt="INSATA"/>
+      </div>
+      <ul class="nav-links">
+        <li><a href="#" class="active">Home</a></li>
+        <li><a href="#">Our Story</a></li>
+        <li>
+          <button class="nav-drop">
+            B2B&nbsp;<img data-key="chevron" alt=""/>
+          </button>
+        </li>
+        <li>
+          <button class="nav-drop">
+            Locations&nbsp;<img data-key="chevron" alt=""/>
+          </button>
+        </li>
+        <li><a href="#">Blogs</a></li>
+        <li><a href="#">Contact</a></li>
+        <li>
+          <a href="#" class="btn-gold sm">Book Now</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <main>
+
+    <!-- ════════════════════════════════════ HERO ══ -->
+    <section id="hero">
+      <div class="hero-bg">
+        <img data-key="heroBg" alt="Luxury service apartment interior"/>
+        <div class="hero-ov"></div>
+      </div>
+      <div class="wrap-xl" style="position:relative;z-index:1;">
+        <div class="hero-body-wrap">
+          <span class="label">Premium Service Apartments</span>
+          <h1 class="h1">
+            Live Beyond <span class="gold-txt">Ordinary</span> in<br>
+            Siliguri &amp; Kolkata
+          </h1>
+          <p class="hero-p">
+            Thoughtfully designed spaces where comfort, flexibility, and modern
+            living come together—whether you're staying for days or months.
+          </p>
+          <div class="hero-ctas">
+            <a href="#" class="btn-gold">Book Your Stay</a>
+            <a href="#" class="btn-outline">Explore Locations</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════ STATS ══ -->
+    <section id="stats">
+      <div class="wrap" style="width:100%;max-width:100%;padding:0;">
+        <div class="stats-grid">
+          <div class="stat">
+            <span class="stat-n">2</span>
+            <span class="stat-l">Cities</span>
+          </div>
+          <div class="stat">
+            <span class="stat-n">50+</span>
+            <span class="stat-l">Apartments</span>
+          </div>
+          <div class="stat">
+            <span class="stat-n">1000+</span>
+            <span class="stat-l">Happy Guests</span>
+          </div>
+          <div class="stat">
+            <span class="stat-n">4.8★</span>
+            <span class="stat-l">Average Rating</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════ ADVANTAGE ══ -->
+    <section id="advantage">
+      <div class="wrap">
+        <div class="sh">
+          <span class="label">The INSATA Experience</span>
+          <h2 class="h2">The Insata Advantage</h2>
+        </div>
+        <div class="adv-grid">
+
+          <div class="adv-card">
+            <img class="ico" data-key="homeIcon" alt=""/>
+            <h3 class="h3-lg">More Space Than Hotels</h3>
+            <p>Spread out in full apartments with separate living, dining, and bedroom areas.</p>
+          </div>
+
+          <div class="adv-card">
+            <img class="ico" data-key="heartIcon" alt=""/>
+            <h3 class="h3-lg">Home-Like Comfort</h3>
+            <p>Every detail designed to make you feel at home—not in transit.</p>
+          </div>
+
+          <div class="adv-card">
+            <img class="ico" data-key="buildIcon" alt=""/>
+            <h3 class="h3-lg">Prime Locations</h3>
+            <p>Strategically placed in business hubs and well-connected neighborhoods.</p>
+          </div>
+
+          <div class="adv-card">
+            <img class="ico" data-key="inrIcon" alt=""/>
+            <h3 class="h3-lg">Affordable Luxury</h3>
+            <p>Premium living without premium pricing—exceptional value, every stay.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════ EXPERIENCE ══ -->
+    <section id="experience">
+      <div class="wrap">
+        <div class="sh">
+          <span class="label">The INSATA Experience</span>
+          <h2 class="h2">Where Every Stay Feels Like Home</h2>
+          <p class="sh-sub">
+            Unlike conventional stays, INSATA spaces are designed for real living. Wake up in a fully
+            furnished apartment, cook your meals, work comfortably, and unwind in a space that feels
+            personal—not temporary.
+          </p>
+        </div>
+
+        <div class="photo-grid">
+          <!-- Left tall -->
+          <div class="pc large">
+            <img class="pimg" data-key="bedroom" alt="Premium bedroom"/>
+            <div class="pc-ov"></div>
+            <div class="pc-label">
+              <span class="label">Premium Comfort</span>
+              <p class="pc-title">Luxury Bedrooms</p>
+            </div>
+          </div>
+
+          <!-- Right stacked -->
+          <div class="pc-stack">
+            <div class="pc small">
+              <img class="pimg" data-key="kitchen" alt="Modern kitchen"/>
+              <div class="pc-ov"></div>
+              <div class="pc-label">
+                <span class="label">Fully Equipped</span>
+                <p class="pc-title">Modern Kitchens</p>
+              </div>
+            </div>
+            <div class="pc small">
+              <img class="pimg" data-key="workspace" alt="Work space"/>
+              <div class="pc-ov"></div>
+              <div class="pc-label">
+                <span class="label">Work Ready</span>
+                <p class="pc-title">Productive Spaces</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ════════════════════════════ WHY INSATA ══ -->
+    <section id="why">
+      <div class="wrap">
+        <div class="sh">
+          <span class="label">Why INSATA</span>
+          <h2 class="h2">Designed for Modern Living</h2>
+        </div>
+        <div class="why-grid">
+
+          <div class="why-card">
+            <img data-key="icoKit" alt=""/>
+            <h3 class="h3-md">Fully Equipped Kitchens</h3>
+            <p>Cook your meals with a full kitchen setup including modern appliances and essentials.</p>
+          </div>
+
+          <div class="why-card">
+            <img data-key="icoWifi" alt=""/>
+            <h3 class="h3-md">High-Speed WiFi</h3>
+            <p>Uninterrupted connectivity for work calls, streaming, or browsing throughout your stay.</p>
+          </div>
+
+          <div class="why-card">
+            <img data-key="icoClean" alt=""/>
+            <h3 class="h3-md">Professional Housekeeping</h3>
+            <p>Regular cleaning and maintenance so you can focus on what matters most.</p>
+          </div>
+
+          <div class="why-card">
+            <img data-key="icoSec" alt=""/>
+            <h3 class="h3-md">Secure &amp; Private</h3>
+            <p>24/7 security, private access, and dedicated spaces for your peace of mind.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ════════════════════════════ LOCATIONS ══ -->
+    <section id="locations">
+      <div class="wrap">
+        <div class="sh">
+          <span class="label">Our Locations</span>
+          <h2 class="h2 dk">Designed for the Way You Move</h2>
+        </div>
+        <div class="loc-grid">
+
+          <div class="loc-card">
+            <img data-key="siliguri" alt="Siliguri cityscape"/>
+            <div class="loc-grad"></div>
+            <div class="loc-body">
+              <div class="loc-tag">
+                <img data-key="mappin" alt=""/>
+                <span>Siliguri</span>
+              </div>
+              <h3 class="h3-sm">Siliguri</h3>
+              <p class="loc-desc">Gateway to Northeast India—ideal for business travelers and mountain enthusiasts.</p>
+              <a href="#" class="btn-outline" style="padding:8px 20px;font-size:14px;">
+                Explore
+                <img data-key="arwGold" alt=""/>
+              </a>
+            </div>
+          </div>
+
+          <div class="loc-card">
+            <img data-key="kolkata" alt="Kolkata cityscape"/>
+            <div class="loc-grad"></div>
+            <div class="loc-body">
+              <div class="loc-tag">
+                <img data-key="mappin" alt=""/>
+                <span>Kolkata</span>
+              </div>
+              <h3 class="h3-sm">Kolkata</h3>
+              <p class="loc-desc">The City of Joy—perfect for corporate stays and cultural explorations.</p>
+              <a href="#" class="btn-outline" style="padding:8px 20px;font-size:14px;">
+                Explore
+                <img data-key="arwGold" alt=""/>
+              </a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════ TESTIMONIALS ══ -->
+    <section id="testimonials">
+      <div class="wrap">
+        <div class="sh">
+          <span class="label">Testimonials</span>
+          <h2 class="h2">Built on Trust, Backed by<br>Experience</h2>
+        </div>
+        <div class="testi-grid">
+
+          <div class="testi-card">
+            <div class="stars">
+              <img data-key="star" alt="★"/><img data-key="star" alt="★"/>
+              <img data-key="star" alt="★"/><img data-key="star" alt="★"/>
+              <img data-key="star" alt="★"/>
+            </div>
+            <p class="testi-q">"INSATA transformed my Siliguri business trips. The apartment felt like a second home—fully equipped, spotless, and perfectly located."</p>
+            <p class="testi-name">Rajesh Sharma</p>
+            <p class="testi-role">Corporate Traveler</p>
+          </div>
+
+          <div class="testi-card">
+            <div class="stars">
+              <img data-key="star" alt="★"/><img data-key="star" alt="★"/>
+              <img data-key="star" alt="★"/><img data-key="star" alt="★"/>
+              <img data-key="star" alt="★"/>
+            </div>
+            <p class="testi-q">"We stayed for two weeks in Kolkata and loved every moment. The kitchen saved us a fortune, and the kids had space to play. Truly premium!"</p>
+            <p class="testi-name">Priya Mukherjee</p>
+            <p class="testi-role">Family Vacation</p>
+          </div>
+
+          <div class="testi-card">
+            <div class="stars">
+              <img data-key="star" alt="★"/><img data-key="star" alt="★"/>
+              <img data-key="star" alt="★"/><img data-key="star" alt="★"/>
+              <img data-key="star" alt="★"/>
+            </div>
+            <p class="testi-q">"As a consultant, I needed something between a hotel and a rental. INSATA nailed it—flexible, professional, and genuinely comfortable."</p>
+            <p class="testi-name">Amit Das</p>
+            <p class="testi-role">Long-term Stay</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ═════════════════════ PROPERTY OWNERS ══ -->
+    <section id="owners">
+      <div class="wrap">
+        <div class="sh">
+          <span class="label">For Property Owners</span>
+          <h2 class="h2 dk">Turning Properties Into Possibilities</h2>
+        </div>
+        <p class="owners-p">
+          Partner with INSATA to transform your residential space into a high-performing service
+          apartment. From setup to guest management, we handle everything.
+        </p>
+        <a href="#" class="btn-dark">
+          Partner With Us
+          <img data-key="arwDark" alt=""/>
+        </a>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════ FINAL CTA ══ -->
+    <section id="cta">
+      <div class="wrap">
+        <h2 class="h2">Step Into Smarter Living</h2>
+        <p class="cta-sub">Discover a better way to stay—where every detail is designed around you.</p>
+        <div class="cta-btns">
+          <a href="#" class="btn-gold">Book Now</a>
+          <a href="#" class="btn-outline">Contact Us</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ════════════════════════════════════ FOOTER ══ -->
+  <footer>
+    <div class="wrap">
+      <div class="footer-grid">
+
+        <div class="ft-brand">
+          <span class="ft-brand-name">INSATA</span>
+          <p>Premium service apartments in Siliguri &amp; Kolkata.<br>Where every stay feels like home.</p>
+        </div>
+
+        <div class="ft-col">
+          <h4>Quick Links</h4>
+          <ul class="ft-links">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Our Story</a></li>
+            <li><a href="#">Locations</a></li>
+            <li><a href="#">B2B Partnership</a></li>
+            <li><a href="#">Blogs</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="ft-col">
+          <h4>Contact Us</h4>
+          <div class="ft-contacts">
+            <div class="ft-ci">
+              <img data-key="phone" alt=""/><span>+91 98765 43210</span>
+            </div>
+            <div class="ft-ci">
+              <img data-key="email" alt=""/><span>hello@insata.in</span>
+            </div>
+            <div class="ft-ci">
+              <img data-key="mappin" alt=""/><span>Siliguri &amp; Kolkata, India</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="ft-col">
+          <h4>Follow Us</h4>
+          <div class="ft-socials">
+            <a href="#">Instagram</a>
+            <a href="#">Facebook</a>
+            <a href="#">LinkedIn</a>
+            <a href="#">WhatsApp</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="ft-bottom">
+      <div class="wrap">
+        <p>© 2026 INSATA. All rights reserved. Premium Service Apartments in Siliguri &amp; Kolkata.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ═══════════════════════════ JAVASCRIPT ══ -->
+  <script>
+    /* ── Navbar scroll-aware opacity ── */
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 20);
+    }, { passive: true });
+
+    /* ── Smooth-reveal on scroll (Intersection Observer) ── */
+    const observer = new IntersectionObserver(
+      entries => entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.style.opacity = '1';
+          e.target.style.transform = 'translateY(0)';
+        }
+      }),
+      { threshold: 0.12 }
+    );
+    document.querySelectorAll('.adv-card, .why-card, .testi-card, .loc-card, .pc').forEach(el => {
+      el.style.opacity    = '0';
+      el.style.transform  = 'translateY(24px)';
+      el.style.transition = 'opacity .55s ease, transform .55s ease';
+      observer.observe(el);
+    });
+  </script>
+
+</body>
+</html>
